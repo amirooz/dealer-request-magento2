@@ -1,0 +1,121 @@
+<form class="form create account form-create-account" action="<?php echo $block->getBaseUrl().'dealer/account/save' ?>" method="post" id="form-validate" enctype="multipart/form-data">
+    <fieldset class="fieldset create info">
+        <legend class="legend"><span><?php echo __('Account Information'); ?></span></legend><br>
+
+        <div class="field required">
+            <label for="business_name" class="label"><span><?php echo __('Business Name') ?></span></label>
+            <div class="control">
+                <input type="text" name="business_name" id="business_name" class="input-text" title="<?php echo __('Business Name') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="primary_contact" class="label"><span><?php echo __('Your Name / Primary Contact') ?></span></label>
+            <div class="control">
+                <input type="text" name="primary_contact" id="primary_contact" class="input-text" title="<?php echo __('Your Name / Primary Contact') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="phone" class="label"><span><?php echo __('Phone') ?></span></label>
+            <div class="control">
+                <input type="text" name="phone" id="phone" class="input-text" title="<?php echo __('Phone') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="fax" class="label"><span><?php echo __('Fax') ?></span></label>
+            <div class="control">
+                <input type="text" name="fax" id="fax" class="input-text" title="<?php echo __('Fax') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="email" class="label"><span><?php echo __('Primary Email') ?></span></label>
+            <div class="control">
+                <input type="email" name="email" autocomplete="email" id="email" title="<?php $block->escapeHtmlAttr(__('Email')) ?>" class="input-text" data-validate="{required:true, 'validate-email':true}" />
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="fieldset address">
+        <legend class="legend"><span><?php echo __('Company Address'); ?></span></legend><br>
+
+        <div class="field required">
+            <label for="street_address" class="label"><span><?php echo __('Street Address') ?></span></label>
+            <div class="control">
+                <input type="text" name="street_address" id="street_address" class="input-text" title="<?php echo __('Street Address') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="city" class="label"><span><?php echo __('City') ?></span></label>
+            <div class="control">
+                <input type="text" name="city" id="city" class="input-text" title="<?php echo __('City') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="state" class="label"><span><?php echo __('State') ?></span></label>
+            <div class="control">
+                <input type="text" name="state" id="state" class="input-text" title="<?php echo __('State') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="postal" class="label"><span><?php echo __('Postal Code') ?></span></label>
+            <div class="control">
+                <input type="text" name="postal" id="postal" class="input-text" title="<?php echo __('Postal Code') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="country" class="label"><span><?php echo __('Country') ?></span></label>
+            <div class="control">
+                <input type="text" name="country" id="country" class="input-text" title="<?php echo __('Country') ?>" />
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset class="fieldset company info">
+        <legend class="legend"><span><?php echo __('Company Information') ?></span></legend><br>
+        <div class="field required">
+            <label for="federal_tax_id" class="label"><span><?php echo __('Federal Tax Identification Number') ?></span></label>
+            <div class="control">
+                <input type="text" name="federal_tax_id" id="federal_tax_id" class="input-text" title="<?php echo __('Federal Tax Identification Number') ?>" />
+            </div>
+        </div>
+
+        <div class="field required">
+            <label for="state_sales_tax_exemption_id" class="label"><span><?php echo __('State Sales Tax Exemption Number'); ?></span></label>
+            <div class="control">
+                <input type="text" name="state_sales_tax_exemption_id" id="state_sales_tax_exemption_id" class="input-text" title="<?php echo __('State Sales Tax Exemption NumbeNumber'); ?>" />
+            </div>
+        </div>
+
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php echo __('Become A Dealer') ?>"><span><?php echo __('Become A Dealer') ?></span></button>
+        </div>
+    </div>
+</form>
+
+<script>
+    require([
+        'jquery',
+        'mage/mage'
+    ], function($){
+
+        var dataForm = $('#form-validate');
+        var ignore = null;
+
+        dataForm.mage('validation', {
+                ignore: ignore ? ':hidden:not(' + ignore + ')' : ':hidden'
+            }).find('input:text').attr('autocomplete', 'off');
+
+    });
+</script>

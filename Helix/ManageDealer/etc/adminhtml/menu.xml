@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Helix_ManageDealer::managedealer" title="Helix IT" module="Helix_ManageDealer" sortOrder="51" resource="Helix_ManageDealer::managedealer"/>
+        <add id="Helix_ManageDealer::dealer" title="Manage Dealers" module="Helix_ManageDealer" sortOrder="10" action="managedealer/dealer" resource="Helix_ManageDealer::dealer" parent="Helix_ManageDealer::managedealer"/>
+        <add id="Helix_ManageDealer::dealer_configuration" title="Configuration" module="Helix_ManageDealer" sortOrder="99" parent="Helix_ManageDealer::managedealer" action="adminhtml/system_config/edit/section/managedealer" resource="Helix_ManageDealer::dealer_configuration"/>
+    </menu>
+</config>
